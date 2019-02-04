@@ -20,8 +20,29 @@ public class PokedexPanel extends JPanel
 		
 		this.pokeController = pokeController;
 		appLayout = new SpringLayout();
+		
+		setupPanel();
+		setupLayout();
+		setupListeners();
 	}
 	
+	private void setupPanel()
+	{
+		this.setLayout(appLayout);
+		this.setPreferredSize(new Dimension(800, 600));
+		this.setBackground(Color.BLACK);
+		
+		
+	}
 	
+	private void setupLayout()
+	{
+		
+	}
+	
+	private void setupListeners()
+	{
+
+	}
 }
 
