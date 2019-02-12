@@ -55,8 +55,9 @@ public class PokedexPanel extends JPanel
 		healthField = new JTextField("0");
 		
 		changeButton = new JButton("Change");
-		pokedexDropdown = new JComboBox();
+		pokedexDropdown = new JComboBox<String>();
 		
+		setupDropdown();
 		setupPanel();
 		setupLayout();
 		setupListeners();
@@ -82,6 +83,11 @@ public class PokedexPanel extends JPanel
 		this.add(enhancementLabel);
 		this.add(healthLabel);
 		this.add(imageLabel);	
+		
+		this.add(changeButton);
+		this.add(pokedexDropdown);
+		
+		numberField.setEnabled(false);
 	}
 	
 	private void setupLayout()
@@ -92,6 +98,12 @@ public class PokedexPanel extends JPanel
 	private void setupListeners()
 	{
 
+	}
+	
+	private void setupDropdown()
+	{
+		DefaultComboBoxModel<String> temp = new DefaultComboBoxModel<String>(pokeController.buildPokedexText());
+		pokedexDropdown.setModel(temp);
 	}
 }
 
