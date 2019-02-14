@@ -2,17 +2,29 @@ package pokemon.controller;
 
 import javax.swing.JOptionPane;
 import pokemon.view.PokedexFrame;
-import pokemon.model.Pokemon;
+import java.util.ArrayList;
+import pokemon.model.*;
 
 public class PokedexController
 {
 	private PokedexFrame pokeFrame;
+	private ArrayList<Pokemon> pokemonList;
 	
 	public PokedexController()
 	{
-		pokeFrame = new PokedexFrame(this);
+		pokeFrame = new PokedexFrame(this); 
 		
-		String [] pokemonList = new String [5];
+		pokemonList = new ArrayList<Pokemon>();
+		addPokemon();
+	}
+	
+	private void addPokemon()
+	{
+		pokemonList.add(new Eevee());
+		pokemonList.add(new Squirtle());
+		pokemonList.add(new Pichu());
+		pokemonList.add(new Torchic());
+		pokemonList.add(new Togepi());
 	}
 	
 	public void start()
