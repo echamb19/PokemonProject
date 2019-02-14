@@ -11,7 +11,7 @@ import java.awt.Font;
 public class PokedexPanel extends JPanel
 {
 	
-	private PokedexController pokeController;
+	private PokedexController app;
 	private SpringLayout appLayout;
 	
 	private JButton changeButton;
@@ -32,12 +32,16 @@ public class PokedexPanel extends JPanel
 	private JLabel healthLabel; 
 	private JLabel imageLabel; 
 	
+	private ImageIcon pokemonIcon;
+	
 	public PokedexPanel(PokedexController pokeController)
 	{
 		super();
 		
-		this.pokeController = pokeController;
+		this.app = app;
 		appLayout = new SpringLayout();
+		
+		this.pokemonIcon = new ImageIcon(getClass().getResource("/pokemon/view/images/picture.png"));
 
 		numberLabel = new JLabel("This Pokemon's number is ");
 		nameLabel = new JLabel ("My Name is ");
@@ -45,7 +49,7 @@ public class PokedexPanel extends JPanel
 		attackLabel = new JLabel("This pokemon attack level is ");
 		enhancementLabel = new JLabel(" This pokemon enhancement is ");
 		healthLabel = new JLabel("This Pokemon's health is ");
-		imageLabel = new JLabel("Pokemon goes here.");
+		imageLabel = new JLabel("Pokemon goes here", pokemonIcon, JLabel.CENTER);
 				
 		numberField = new JTextField("0");
 		nameField = new JTextField("My pokename");
@@ -55,7 +59,7 @@ public class PokedexPanel extends JPanel
 		healthField = new JTextField("0");
 		
 		changeButton = new JButton("Change");
-		pokedexDropdown = new JComboBox<String>();
+		pokedexDropdown = new JComboBox<String>(); // Stub
 		
 		setupDropdown();
 		setupPanel();
@@ -88,6 +92,9 @@ public class PokedexPanel extends JPanel
 		this.add(pokedexDropdown);
 		
 		numberField.setEnabled(false);
+		
+		imageLabel.setVerticalTextPosition(JLabel.BOTTOM);
+		imageLabel.setHorizontalTextPosition(JLabel.CENTER);
 	}
 	
 	private void setupLayout()
@@ -102,7 +109,7 @@ public class PokedexPanel extends JPanel
 	
 	private void setupDropdown()
 	{
-		DefaultComboBoxModel<String> temp = new DefaultComboBoxModel<String>(pokeController.buildPokedexText());
+		DefaultComboBoxModel<String> temp = new DefaultComboBoxModel<String>(app.buildPokedexText());
 		pokedexDropdown.setModel(temp);
 	}
 }

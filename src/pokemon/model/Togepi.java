@@ -4,7 +4,7 @@ public class Togepi extends Pokemon implements Fairy
 {
 	public Togepi()
 	{
-		super(99, "Togepi");
+		super(175, "Togepi");
 	}
 	
 	public Togepi(String name)
