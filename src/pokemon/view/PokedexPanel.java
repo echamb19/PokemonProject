@@ -104,13 +104,25 @@ public class PokedexPanel extends JPanel
 	
 	private void setupListeners()
 	{
-
+		
 	}
 	
 	private void setupDropdown()
 	{
 		DefaultComboBoxModel<String> temp = new DefaultComboBoxModel<String>(app.buildPokedexText());
 		pokedexDropdown.setModel(temp);
+	}
+	
+	private void sendDataToController()
+	{
+		int index = pokedexDropdown.getSelectedIndex();
+		if(app.isInt(attackField.getText()) && app.isDouble(enhancementField.getText()) && app.isInt(healthField.getText()))
+		{
+			String [] data = new String [5];
+			
+			// Insert Code Here
+			app.updatePokemon(index,data);
+		}
 	}
 }
 

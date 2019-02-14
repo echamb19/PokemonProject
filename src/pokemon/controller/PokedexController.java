@@ -43,4 +43,36 @@ public class PokedexController
 		}
 		return names; 
 	}
+	
+	public boolean isDouble(String mightBeDouble)
+	{
+		boolean isValid = false;
+		
+		try
+		{
+			Double.parseDouble(mightBeDouble);
+			isValid = true;
+		}
+		catch (NumberFormatException error)
+		{
+			JOptionPane.showMessageDialog(null, "Type a decimal value please.");
+		}
+		return isValid;
+	}
+	
+	public boolean isInt(String maybeInt)
+	{
+		boolean isValid = false; 
+		try
+		{
+			Integer.parseInt(maybeInt);
+			isValid = true;
+		}
+		catch (NumberFormatException error) //Two things inside perens is formal perameter
+		{
+			JOptionPane.showMessageDialog(null, "You need to type in a whole number. :)");
+		}
+		
+		return isValid;
+	}
 }
