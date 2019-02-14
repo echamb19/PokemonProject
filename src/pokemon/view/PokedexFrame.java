@@ -22,8 +22,8 @@ public class PokedexFrame extends JFrame
 	{
 		this.setContentPane(pokePanel);
 		this.setTitle("Pokemon Data");
-		this.setSize(800, 600);
+		this.setSize(800, 600); 
 		this.setResizable(false);
-		this.setVisible(true);
+		this.setVisible(true); 
 	}
 }

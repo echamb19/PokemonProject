@@ -38,7 +38,7 @@ public class PokedexPanel extends JPanel
 	{
 		super();
 		
-		this.app = app;
+		this.app = pokeController;
 		appLayout = new SpringLayout();
 		
 		this.pokemonIcon = new ImageIcon(getClass().getResource("/pokemon/view/images/pokeball.png"));
