@@ -104,7 +104,21 @@ public class PokedexPanel extends JPanel
 	
 	private void setupListeners()
 	{
+		changeButton.addActionListener(new ActionListener()
+		{
+				public void actionPerformed(ActionEvent click)
+				{
+					sendDataToController();
+				}
+		});
 		
+		pokedexDropdown.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				sendDataToController();
+			}
+		});
 	}
 	
 	private void setupDropdown()
