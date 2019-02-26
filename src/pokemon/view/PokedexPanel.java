@@ -157,7 +157,8 @@ public class PokedexPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				sendDataToController();
+				String name = pokedexDropdown.getSelectedItem().toString();
+				changeImageDisplay(name);
 			}
 		});
 		
@@ -184,7 +185,12 @@ public class PokedexPanel extends JPanel
 		{
 			String [] data = new String [5];
 			
-			// Insert Code Here
+			data[0] = attackField.getText();
+			data[1] = enhancementField.getText();
+			data[2] = healthField.getText();
+			data[3] = nameField.getText();
+			data[4] = evolveField.getText();
+			
 			app.updatePokemon(index, data);
 		}
 	}

@@ -30,7 +30,7 @@ public class PokedexController
 	
 	public void start()
 	{
-		
+		loadPokedex();
 	}
 	
 	public ArrayList<Pokemon> getPokemonList()
@@ -67,7 +67,7 @@ public class PokedexController
 		return names; 
 	}
 	
-	private void savePokedex()
+	public void savePokedex()
 	{
 		try
 		{
