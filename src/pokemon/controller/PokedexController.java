@@ -26,6 +26,7 @@ public class PokedexController
 		pokemonList.add(new Pichu());
 		pokemonList.add(new Torchic());
 		pokemonList.add(new Togepi());
+		pokemonList.add(new FlyingToast());
 	}
 	
 	public void start()
