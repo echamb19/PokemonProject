@@ -64,6 +64,7 @@ public class PokedexPanel extends JPanel
 		attackField = new JTextField("0");
 		enhancementField = new JTextField("0");
 		healthField = new JTextField("0");
+		
 		changeButton = new JButton("Change");
 		saveButton = new JButton("Save");
 		pokedexDropdown = new JComboBox<String>();
